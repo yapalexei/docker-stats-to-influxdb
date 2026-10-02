@@ -4,7 +4,7 @@ Script for monitoring Docker containers (using **docker stats** and **docker ps*
 
 ### 🚀 Install
 
-For creat service (unit systemd) and download script from github repository can be used [deploy](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/deploy.sh) script.
+For creat service (unit systemd) and download script from github repository can be used [deploy](deploy.sh) script.
 
 Run at the command prompt (**root privileges required**):
 
@@ -72,28 +72,28 @@ Example original output and after convert
 
 ### 📊 Influx data
 
-![Image alt](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/screen/influxdb-data.jpg)
+![Image alt](screen/influxdb-data.jpg)
 
 Tag key **container**:
 
-![Image alt](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/screen/tag-key-container.jpg)
+![Image alt](screen/tag-key-container.jpg)
 
 Tag key **host**:
 
-![Image alt](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/screen/tag-key-host.jpg)
+![Image alt](screen/tag-key-host.jpg)
 
 Filtering by **summary load (sum)** in the last one minute:
 
 `SELECT * FROM "stats" WHERE container = 'sum' and time > now() - 1m`
 
-![Image alt](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/screen/select-sum.jpg)
+![Image alt](screen/select-sum.jpg)
 
 ### 📈 Grafana dashboard
 
 Example dashboard for sum all containers
 
-![Image alt](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/screen/grafana-dashboard-sum.jpg)
+![Image alt](screen/grafana-dashboard-sum.jpg)
 
 Selected container:
 
-![Image alt](https://github.com/Lifailon/docker-stats-to-influxdb/blob/rsa/screen/grafana-dashboard-uptime.jpg)
+![Image alt](screen/grafana-dashboard-uptime.jpg)
